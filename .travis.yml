@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t udagram-frontend-files .
-  - docker container run -name intermediate-container udagram-frontend-files
+  - docker container run --name intermediate-container udagram-frontend-files
   - docker cp intermediate-container:/usr/src/app/www ./www
   - docker pull nginx
   - echo $'FROM nginx\nCOPY ./www /usr/share/nginx/html\nEXPOSE 8080' > ./www/Dockerfile
