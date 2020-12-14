@@ -10,3 +10,5 @@ COPY . .
 
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
 CMD ["npm", "start"]
+
+EXPOSE 8080
