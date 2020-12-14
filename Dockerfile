@@ -1,5 +1,6 @@
+# BUILD
 # Use NodeJS base image
-FROM node:13
+FROM node:13 as builder
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,7 +17,11 @@ COPY . .
 
 CMD ["npm", "install"]
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
-CMD ["./node_modules/http-server/bin/http-server", "./www", "-s"]
+
+# PACKAGE
+FROM nginx
 
 # Bind the port that the image will run on
 EXPOSE 8080
+
+COPY --from=builder /usr/src/app/www /usr/share/nginx/html
