@@ -15,7 +15,6 @@ RUN npm install
 # Copy app source
 COPY . .
 
-CMD ["npm", "install"]
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
 
 # PACKAGE
