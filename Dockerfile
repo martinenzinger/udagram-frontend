@@ -1,6 +1,5 @@
-# BUILD
-# Use NodeJS base image
-FROM node:13 as builder
+# Base image
+FROM beevelop/ionic:latest
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -15,7 +14,8 @@ RUN npm install
 # Copy app source
 COPY . .
 
-CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
+RUN ionic build
+RUN ionic serve --port 8080 --verbose
 
 # Bind the port that the image will run on
 EXPOSE 8080
