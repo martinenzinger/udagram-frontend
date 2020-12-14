@@ -16,7 +16,7 @@ COPY . .
 
 CMD ["npm", "install"]
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
-CMD ["./node_modules/@ionic/cli/bin/ionic", "serve"]
+CMD ["./node_modules/http-server/bin/http-server", "./www"]
 
 # Bind the port that the image will run on
-EXPOSE 8100
+EXPOSE 8080

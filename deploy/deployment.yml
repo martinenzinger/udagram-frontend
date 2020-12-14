@@ -22,4 +22,4 @@ spec:
             name: udagram-config
         imagePullPolicy: "Always"
         ports:
-        - containerPort: 8100
+        - containerPort: 8080
