@@ -1,10 +1,6 @@
 # Use NodeJS base image
 FROM node:13
 
-ARG POSTGRES_USERNAME
-ENV POSTGRES_USERNAME=$POSTGRES_USERNAME
-
-
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -19,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Bind the port that the image will run on
-EXPOSE 8100
+EXPOSE 8080
 
 CMD ["npm", "install"]
 CMD ["npm", "install -g @ionic/cli"]
