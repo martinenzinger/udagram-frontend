@@ -17,10 +17,5 @@ COPY . .
 
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
 
-# PACKAGE
-FROM nginx
-
 # Bind the port that the image will run on
 EXPOSE 8080
-
-COPY --from=builder /usr/src/app/www /usr/share/nginx/html
