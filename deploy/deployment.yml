@@ -17,6 +17,9 @@ spec:
       containers:
       - name: udagram-frontend
         image: martinenzinger/udagram-frontend
+        envFrom:
+        - configMapRef:
+            name: udagram-config
         imagePullPolicy: "Always"
         ports:
         - containerPort: 8100

@@ -1,6 +1,10 @@
 # Use NodeJS base image
 FROM node:13
 
+ARG POSTGRES_USERNAME
+ENV POSTGRES_USERNAME=$POSTGRES_USERNAME
+
+
 # Create app directory
 WORKDIR /usr/src/app
 
