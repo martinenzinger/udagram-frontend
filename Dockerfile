@@ -15,9 +15,9 @@ RUN npm install
 COPY . .
 
 # Bind the port that the image will run on
-EXPOSE 8080
+EXPOSE 8100
 
 CMD ["npm", "install"]
 CMD ["npm", "install -g @ionic/cli"]
 CMD ["./node_modules/@ionic/cli/bin/ionic", "build"]
-CMD ["./node_modules/@ionic/cli/bin/ionic", "serve --p 8080"]
+CMD ["./node_modules/@ionic/cli/bin/ionic", "serve"]
